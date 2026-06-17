@@ -583,6 +583,32 @@
       .worldview-item.active .wv-body { padding-left: 0; }  
       .hero-scroll { display: none; }  
       .modal-content { padding: 1.5rem; }
+
+      /* 줄간격 & 문단 사이 여백 확장 — 텍스트가 빽빽해지지 않도록 */
+      body { line-height: 1.75; }
+      .hero-subtitle { line-height: 2.1; }
+      .wv-intro-text p { line-height: 2.15; }
+      .wv-intro-text p + p { margin-top: 1.3rem; }
+      .wv-stat-content p { line-height: 1.85; }
+      .wv-body-inner { line-height: 2.2; }
+      .wv-body-inner p + p { margin-top: 1.5rem; }
+      .desc-box p { line-height: 2.05; }
+      .desc-box p + p { margin-top: 1.4rem; }
+      .desc-box { padding: 1.2rem 1.3rem; margin-bottom: 0.9rem; }
+      .t-desc { line-height: 1.85; }
+      .time-cell { padding: 1.3rem; }
+      .time-grid { gap: 0.9rem; }
+      .char-keywords { line-height: 2.1; margin-bottom: 1.2rem; }
+      .char-quote { line-height: 1.95; }
+      .modal-section { margin-bottom: 2.6rem; }
+      .worldview-item.active .wv-body { padding: 0 0 2.4rem 0; }
+      .wv-header { padding: 1.5rem 0; }
+
+      /* 카드/모달 높이가 내용에 맞춰 자연스럽게 늘어나도록 — 텍스트 잘림 방지 */
+      .char-card { height: auto; }
+      .char-info { height: auto; overflow: visible; }
+      .modal-img { height: clamp(220px, 32vh, 320px); }
+      .worldview-item.active .wv-body { max-height: 4000px; } /* 줄간격 확장으로 콘텐츠가 길어져도 잘리지 않게 여유값 부여 */
       }  
     </style>  
   </head>  
@@ -817,7 +843,7 @@
                   </div>  
                   <p class="char-keywords">시로가네가 비상식량으로 칭하지만, 실질적으로는 신사의 실세를 장악한 영악한 수컷 햄스터.</p>  
                   <p class="char-quote">"(뻔뻔하게 해바라기씨를 깐다)"</p>  
-                  <button class="char-more-btn">상세 정보 <span class="arrow">→</span></button>  
+                  <button class="char-more-btn"><span class="arrow">→</span> 상세 정보</button>  
                 </div>  
               </div>  
               <div class="char-card" onclick="openModal('nekomaru')">  
@@ -836,7 +862,7 @@
                   </div>  
                   <p class="char-keywords">매년 가을 나타나 시로가네의 위장을 괴롭히는 요괴관리국 소속 특별 감찰관 쌍둥이 자매.</p>  
                   <p class="char-quote">"신사의 장부가 이리도 엉망이라니, 짐이 친히 바로잡아 주겠노라!"</p>  
-                  <button class="char-more-btn">상세 정보 <span class="arrow">→</span></button>  
+                  <button class="char-more-btn"><span class="arrow">→</span> 상세 정보</button>  
                 </div>  
               </div>  
               <div class="char-card" onclick="openModal('tenma')">  
@@ -855,7 +881,7 @@
                   </div>  
                   <p class="char-keywords">시간 약속에 병적으로 집착하는 과묵하고 성실한 텐구 특급 소속 배송원. 배송 성공률 99.9%.</p>  
                   <p class="char-quote">"추가 위험 수당 30%가 가산되었습니다. 이견이 없으시다면 서명 부탁드립니다."</p>  
-                  <button class="char-more-btn">상세 정보 <span class="arrow">→</span></button>  
+                  <button class="char-more-btn"><span class="arrow">→</span> 상세 정보</button>  
                 </div>  
               </div>  
               <div class="char-card" onclick="openModal('mamijiro')">  
@@ -874,7 +900,7 @@
                   </div>  
                   <p class="char-keywords">돈과 은밀한 소문을 세상에서 가장 사랑하는 신계 최고의 너구리 정보상.</p>  
                   <p class="char-quote">"세상에 공짜 정보는 없는 법이지요. 지불하신 금액만큼의 '진실'만 드리겠습니다."</p>  
-                  <button class="char-more-btn">상세 정보 <span class="arrow">→</span></button>  
+                  <button class="char-more-btn"><span class="arrow">→</span> 상세 정보</button>  
                 </div>  
               </div>  
             </div>  
@@ -904,7 +930,7 @@
                   </div>  
                   <p class="char-keywords">강박에 가까운 원칙주의자. 신사의 회계, 현장 업무, 징벌을 혼자 도맡아 적자 상황에 가장 민감하게 반응한다.</p>  
                   <p class="char-quote">"... 뭘 봐? 눈 안 깔아!?"</p>  
-                  <button class="char-more-btn">상세 프로필 <span class="arrow">→</span></button>  
+                  <button class="char-more-btn"><span class="arrow">→</span> 상세 프로필</button>  
                 </div>  
               </div>  
               <div class="char-card" onclick="openModal('akane')">  
@@ -923,7 +949,7 @@
                   </div>  
                   <p class="char-keywords">타고난 협상가이자 도박꾼. 말로는 누구도 이기지 못하지만, 번 돈은 도박판에서 더 빠르게 사라진다.</p>  
                   <p class="char-quote">"명중, 지금부터 넌 이틀간 신사 청소 담당이다."</p>  
-                  <button class="char-more-btn">상세 프로필 <span class="arrow">→</span></button>  
+                  <button class="char-more-btn"><span class="arrow">→</span> 상세 프로필</button>  
                 </div>  
               </div>  
               <div class="char-card" onclick="openModal('fujin')">  
@@ -942,7 +968,7 @@
                   </div>  
                   <p class="char-keywords">압도적인 신격의 대신급 주신. 대부분의 시간을 수면과 다도로 보내며, 신역 밖으로는 나가지 못한다.</p>  
                   <p class="char-quote">"...귀찮아."</p>  
-                  <button class="char-more-btn">상세 프로필 <span class="arrow">→</span></button>  
+                  <button class="char-more-btn"><span class="arrow">→</span> 상세 프로필</button>  
                 </div>  
               </div>  
             </div>  
