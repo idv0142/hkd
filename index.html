@@ -1,0 +1,1612 @@
+# index  
+  
+<!DOCTYPE html>  
+<html lang="ko">  
+  <head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>HAKUBO SHRINE | 하쿠보 신사</title>  
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v3.2.1/dist/web/static/pretendard.css" />  
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">  
+    <style>  
+      :root {  
+      --bg-dark: #0a0a0c;  
+      --bg-card: #111114;  
+      --bg-surface: #16161a;  
+      --text-main: #f0ede8;  
+      --text-body: #c8c4bc;  
+      --text-muted: #6b6760;  
+      --accent-red: #C0392B;  
+      --accent-red-dim: #7a2219;  
+      --line-color: #252528;  
+      }  
+      * { box-sizing: border-box; margin: 0; padding: 0; }  
+      body {  
+      background-color: var(--bg-dark);  
+      color: var(--text-main);  
+      font-family: 'Pretendard', sans-serif;  
+      line-height: 1.6;  
+      overflow-x: hidden;  
+      -webkit-font-smoothing: antialiased;  
+      }  
+      /* ─── NAV ─── */  
+      nav {  
+      position: fixed;  
+      top: 0; left: 0; width: 100%;  
+      padding: 1.6rem 5%;  
+      display: flex;  
+      justify-content: space-between;  
+      align-items: center;  
+      z-index: 200;  
+      background: linear-gradient(to bottom, rgba(10,10,12,0.95) 0%, rgba(10,10,12,0) 100%);  
+      }  
+      .logo-wrap {  
+      display: flex;  
+      align-items: center;  
+      gap: 10px;  
+      font-family: 'Oswald', sans-serif;  
+      font-size: 1rem;  
+      letter-spacing: 4px;  
+      color: var(--text-main);  
+      text-decoration: none;  
+      }  
+      .logo-dot {  
+      width: 8px; height: 8px;  
+      background-color: var(--accent-red);  
+      border-radius: 50%;  
+      }  
+      .nav-right { display: flex; align-items: center; gap: 2rem; }  
+      .nav-links { display: flex; gap: 2rem; list-style: none; }  
+      .nav-links a {  
+      font-size: 0.78rem;  
+      letter-spacing: 2px;  
+      color: var(--text-muted);  
+      text-decoration: none;  
+      text-transform: uppercase;  
+      transition: color 0.2s;  
+      }  
+      .nav-links a:hover { color: var(--text-main); }  
+      .bgm-btn {  
+      background: transparent;  
+      color: var(--text-muted);  
+      border: 1px solid var(--line-color);  
+      font-size: 0.72rem;  
+      letter-spacing: 2px;  
+      cursor: pointer;  
+      display: flex;  
+      align-items: center;  
+      gap: 6px;  
+      padding: 0.4rem 0.9rem;  
+      transition: all 0.2s;  
+      font-family: inherit;  
+      }  
+      .bgm-btn:hover { color: var(--text-main); border-color: #444; }  
+      /* ─── HERO ─── */  
+      .hero {  
+      position: relative;  
+      height: 100vh;  
+      min-height: 700px;  
+      display: flex;  
+      flex-direction: column;  
+      justify-content: flex-end;  
+      padding: 0 10% 8rem;  
+      background-image: url('https://jd82.uk/hkb/N/bg.png');  
+      background-size: cover;  
+      background-position: 70% center;  
+      }  
+      .hero::before {  
+      content: '';  
+      position: absolute;  
+      inset: 0;  
+      background: linear-gradient(  
+      to bottom,  
+      rgba(10,10,12,0.3) 0%,  
+      rgba(10,10,12,0.1) 40%,  
+      rgba(10,10,12,0.85) 80%,  
+      rgba(10,10,12,1) 100%  
+      );  
+      z-index: 1;  
+      }  
+      .hero::after {  
+      content: '';  
+      position: absolute;  
+      inset: 0;  
+      background: radial-gradient(ellipse at 60% 40%, rgba(100,20,20,0.12) 0%, transparent 60%);  
+      z-index: 0;  
+      }  
+      .hero-content {  
+      position: relative;  
+      z-index: 2;  
+      }  
+      .hero-eyebrow {  
+      font-size: 0.72rem;  
+      letter-spacing: 4px;  
+      color: var(--accent-red);  
+      text-transform: uppercase;  
+      margin-bottom: 1.2rem;  
+      display: flex;  
+      align-items: center;  
+      gap: 1rem;  
+      }  
+      .hero-eyebrow::before {  
+      content: '';  
+      display: block;  
+      width: 2rem;  
+      height: 1px;  
+      background: var(--accent-red);  
+      }  
+      .hero-title {  
+      font-family: 'Oswald', sans-serif;  
+      font-size: clamp(4.5rem, 9vw, 8.5rem);  
+      font-weight: 700;  
+      line-height: 0.95;  
+      letter-spacing: 1px;  
+      text-transform: uppercase;  
+      margin-bottom: 1.5rem;  
+      }  
+      .hero-title .ko {  
+      display: block;  
+      font-family: 'Noto Serif JP', serif;  
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);  
+      font-weight: 400;  
+      letter-spacing: 0.3em;  
+      color: var(--text-body);  
+      margin-top: 0.6rem;  
+      }  
+      .hero-subtitle {  
+      font-size: 0.95rem;  
+      color: var(--text-muted);  
+      max-width: 420px;  
+      word-break: keep-all;  
+      line-height: 1.9;  
+      }  
+      .hero-scroll {  
+      position: absolute;  
+      bottom: 3rem;  
+      right: 10%;  
+      z-index: 2;  
+      display: flex;  
+      flex-direction: column;  
+      align-items: center;  
+      gap: 0.6rem;  
+      font-size: 0.65rem;  
+      letter-spacing: 3px;  
+      color: var(--text-muted);  
+      text-transform: uppercase;  
+      }  
+      .scroll-line {  
+      width: 1px;  
+      height: 50px;  
+      background: linear-gradient(to bottom, var(--accent-red), transparent);  
+      animation: scrollPulse 2s ease-in-out infinite;  
+      }  
+      @keyframes scrollPulse {  
+      0%, 100% { opacity: 0.4; }  
+      50% { opacity: 1; }  
+      }  
+      /* ─── SECTION BASE ─── */  
+      .section-wrap { padding: 7rem 10%; }  
+      .section-header { margin-bottom: 3.5rem; }  
+      .section-eyebrow {  
+      font-size: 0.72rem;  
+      letter-spacing: 4px;  
+      color: var(--text-muted);  
+      text-transform: uppercase;  
+      margin-bottom: 0.7rem;  
+      }  
+      .section-title {  
+      font-family: 'Oswald', sans-serif;  
+      font-size: clamp(1.6rem, 3vw, 2.2rem);  
+      letter-spacing: 1px;  
+      text-transform: uppercase;  
+      color: var(--text-main);  
+      }  
+      .section-divider {  
+      width: 3rem;  
+      height: 1px;  
+      background: var(--accent-red);  
+      margin-top: 1.2rem;  
+      }  
+      /* ─── WORLDVIEW ─── */  
+      .worldview-intro {  
+      display: grid;  
+      grid-template-columns: 1fr 1fr;  
+      gap: 2.5rem;  
+      margin-bottom: 4rem;  
+      padding: 2.8rem;  
+      background: var(--bg-surface);  
+      border: 1px solid var(--line-color);  
+      border-left: 3px solid var(--accent-red);  
+      }  
+      .wv-intro-text { display: flex; flex-direction: column; justify-content: center; }  
+      .wv-intro-text h3 {  
+      font-family: 'Noto Serif JP', serif;  
+      font-size: 1.15rem;  
+      font-weight: 600;  
+      margin-bottom: 1rem;  
+      color: var(--text-main);  
+      }  
+      .wv-intro-text p {  
+      font-size: 0.9rem;  
+      color: var(--text-body);  
+      line-height: 2;  
+      word-break: keep-all;  
+      }  
+      .wv-stats { display: flex; flex-direction: column; gap: 1rem; }  
+      .wv-stat {  
+      display: flex;  
+      gap: 1rem;  
+      align-items: flex-start;  
+      padding: 1rem 1.2rem;  
+      background: var(--bg-dark);  
+      border: 1px solid var(--line-color);  
+      }  
+      .wv-stat-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }  
+      .wv-stat-content h5 {  
+      font-size: 0.82rem;  
+      font-weight: 600;  
+      margin-bottom: 0.25rem;  
+      color: var(--text-main);  
+      }  
+      .wv-stat-content p {  
+      font-size: 0.78rem;  
+      color: var(--text-muted);  
+      line-height: 1.65;  
+      word-break: keep-all;  
+      }  
+      /* 아코디언 */  
+      .worldview-list { border-top: 1px solid var(--line-color); }  
+      .worldview-item { border-bottom: 1px solid var(--line-color); }  
+      .wv-header {  
+      width: 100%;  
+      background: none;  
+      border: none;  
+      color: var(--text-main);  
+      padding: 1.7rem 0;  
+      display: flex;  
+      justify-content: space-between;  
+      align-items: center;  
+      cursor: pointer;  
+      text-align: left;  
+      font-family: inherit;  
+      transition: opacity 0.2s;  
+      }  
+      .wv-header:hover { opacity: 0.7; }  
+      .wv-header-left { display: flex; align-items: center; gap: 1.2rem; }  
+      .wv-num {  
+      font-size: 0.68rem;  
+      color: var(--accent-red);  
+      letter-spacing: 2px;  
+      font-family: 'Oswald', sans-serif;  
+      min-width: 2rem;  
+      }  
+      .wv-header h4 { font-size: 0.97rem; font-weight: 600; letter-spacing: 0.02em; }  
+      .wv-toggle {  
+      width: 26px; height: 26px;  
+      border: 1px solid var(--line-color);  
+      display: flex;  
+      align-items: center;  
+      justify-content: center;  
+      font-size: 1rem;  
+      color: var(--text-muted);  
+      transition: all 0.3s;  
+      flex-shrink: 0;  
+      }  
+      .worldview-item.active .wv-toggle {  
+      transform: rotate(45deg);  
+      border-color: var(--accent-red);  
+      color: var(--accent-red);  
+      }  
+      .wv-body {  
+      max-height: 0;  
+      overflow: hidden;  
+      transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;  
+      padding: 0 0 0 3.2rem;  
+      }  
+      .worldview-item.active .wv-body {  
+      max-height: 1200px;  
+      padding: 0 0 2rem 3.2rem;  
+      }  
+      .wv-body-inner {  
+      font-size: 0.9rem;  
+      color: var(--text-body);  
+      line-height: 2;  
+      word-break: keep-all;  
+      }  
+      .wv-body-inner p + p { margin-top: 1.2rem; }  
+      .wv-body-inner strong { color: var(--text-main); font-weight: 600; }  
+      .time-grid {  
+      display: grid;  
+      grid-template-columns: 1fr 1fr;  
+      gap: 0.6rem;  
+      margin-top: 1.2rem;  
+      }  
+      .time-cell {  
+      padding: 1.2rem;  
+      background: var(--bg-surface);  
+      border: 1px solid var(--line-color);  
+      }  
+      .time-cell .t-label {  
+      font-size: 0.7rem;  
+      letter-spacing: 2px;  
+      color: var(--text-muted);  
+      text-transform: uppercase;  
+      margin-bottom: 0.5rem;  
+      font-weight: 600;  
+      }  
+      .time-cell.danger { border-color: var(--accent-red-dim); }  
+      .time-cell.danger .t-label { color: var(--accent-red); }  
+      .time-cell .t-desc {  
+      font-size: 0.85rem;  
+      color: var(--text-body);  
+      line-height: 1.6;  
+      word-break: keep-all;  
+      }  
+      /* ─── CHARACTER GRID & NPC GRID ─── */  
+      .char-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }  
+      .npc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; }  
+      .char-card { display: flex; flex-direction: column; cursor: pointer; }  
+      .char-img-wrap {  
+      position: relative;  
+      width: 100%;  
+      aspect-ratio: 3 / 4;  
+      background-color: var(--bg-card);  
+      border: 1px solid var(--line-color);  
+      overflow: hidden;  
+      margin-bottom: 1.4rem;  
+      }  
+      /* NPC 카드는 가독성을 위해 정사각형 비율로 안정감 부여 */  
+      .npc-grid .char-img-wrap { aspect-ratio: 1 / 1; }  
+      .char-img {  
+      width: 100%; height: 100%;  
+      background-size: cover; background-position: center;  
+      transition: transform 0.6s ease, filter 0.4s ease;  
+      filter: grayscale(20%) brightness(0.9);  
+      }  
+      .char-card:hover .char-img {  
+      transform: scale(1.04);  
+      filter: grayscale(0%) brightness(1);  
+      }  
+      .char-img-overlay {  
+      position: absolute;  
+      inset: 0;  
+      background: linear-gradient(to top, rgba(10,10,12,0.75) 0%, transparent 50%);  
+      }  
+      .char-img-badge {  
+      position: absolute;  
+      top: 1rem; left: 1rem;  
+      font-size: 0.68rem; letter-spacing: 1.5px;  
+      padding: 0.3rem 0.6rem;  
+      background: rgba(10,10,12,0.85);  
+      border: 1px solid var(--line-color);  
+      color: var(--text-muted);  
+      }  
+      .char-img-view {  
+      position: absolute;  
+      bottom: 1rem; right: 1rem;  
+      font-size: 0.72rem; letter-spacing: 2px;  
+      color: var(--text-muted); text-transform: uppercase;  
+      opacity: 0; transform: translateY(6px);  
+      transition: all 0.3s;  
+      }  
+      .char-card:hover .char-img-view { opacity: 1; transform: translateY(0); }  
+      .char-name-row {  
+      display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;  
+      }  
+      .char-info h3 { font-family: 'Noto Serif JP', serif; font-size: 1.25rem; font-weight: 600; }  
+      .char-rank { font-size: 0.68rem; color: var(--text-muted); letter-spacing: 1px; }  
+      .char-keywords {  
+      font-size: 0.82rem; color: var(--text-body);  
+      margin-bottom: 1rem; line-height: 1.85; word-break: keep-all;  
+      }  
+      .char-quote {  
+      font-size: 0.85rem;  
+      font-family: 'Noto Serif JP', serif;  
+      border-left: 2px solid var(--line-color);  
+      padding-left: 1rem;  
+      color: var(--text-body);  
+      line-height: 1.75;  
+      word-break: keep-all;  
+      margin-bottom: 0.5rem;  
+      }  
+      .char-more-btn {  
+      display: inline-flex; align-items: center; gap: 0.5rem;  
+      margin-top: 1.1rem; font-size: 0.73rem; letter-spacing: 2px;  
+      text-transform: uppercase; color: var(--text-muted);  
+      border: none; background: none; cursor: pointer; padding: 0;  
+      font-family: inherit; transition: color 0.2s;  
+      }  
+      .char-more-btn:hover { color: var(--text-main); }  
+      .char-more-btn .arrow { transition: transform 0.2s; font-weight: bold; }  
+      .char-more-btn:hover .arrow { transform: translateX(3px); }  
+      /* ─── MODAL ─── */  
+      .modal-overlay {  
+      position: fixed; inset: 0; z-index: 500;  
+      background: rgba(10,10,12,0.92); backdrop-filter: blur(8px);  
+      display: flex; align-items: center; justify-content: center;  
+      padding: 2rem; opacity: 0; pointer-events: none; transition: opacity 0.3s;  
+      }  
+      .modal-overlay.open { opacity: 1; pointer-events: auto; }  
+      .modal {  
+      position: relative; width: 100%; max-width: 720px; max-height: 90vh;  
+      background: var(--bg-surface); border: 1px solid var(--line-color);  
+      overflow-y: auto; transform: translateY(20px); transition: transform 0.3s ease;  
+      }  
+      .modal-overlay.open .modal { transform: translateY(0); }  
+      .modal::-webkit-scrollbar { width: 6px; }  
+      .modal::-webkit-scrollbar-track { background: transparent; }  
+      .modal::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }  
+      .modal-close {  
+      position: absolute; top: 1rem; right: 1rem;  
+      background: rgba(10,10,12,0.6); border: 1px solid var(--line-color); backdrop-filter: blur(4px);  
+      color: var(--text-muted); width: 34px; height: 34px; border-radius: 50%;  
+      display: flex; align-items: center; justify-content: center;  
+      cursor: pointer; font-size: 1rem; z-index: 10; transition: all 0.2s;  
+      }  
+      .modal-close:hover { border-color: var(--text-main); color: var(--text-main); background: rgba(10,10,12,0.9); }  
+      /* 모달 레이아웃 (세로형) */  
+      .modal-body { display: flex; flex-direction: column; }  
+      .modal-img {  
+      width: 100%; height: clamp(250px, 40vh, 400px);  
+      background-color: var(--bg-card);  
+      background-size: cover; background-position: top center;  
+      border-bottom: 1px solid var(--line-color);  
+      }  
+      .modal-content { padding: 2.5rem 2.5rem; }  
+      .modal-eyebrow {  
+      font-size: 0.68rem; letter-spacing: 3px; color: var(--text-muted);  
+      text-transform: uppercase; margin-bottom: 0.5rem;  
+      }  
+      .modal-name { font-family: 'Noto Serif JP', serif; font-size: 2rem; font-weight: 600; margin-bottom: 0.25rem; }  
+      .modal-rank {  
+      font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.5px;  
+      padding-bottom: 1.5rem; margin-bottom: 1.5rem;  
+      }  
+      /* ─── MODAL TABS ─── */  
+      .modal-tabs { display: flex; gap: 1.5rem; border-bottom: 1px solid var(--line-color); margin-bottom: 1.8rem; }  
+      .modal-tab-btn { background: none; border: none; color: var(--text-muted); font-family: inherit; font-size: 0.85rem; font-weight: 600; padding: 0.6rem 0; cursor: pointer; transition: color 0.2s; position: relative; }  
+      .modal-tab-btn.active { color: var(--accent-red); }  
+      .modal-tab-btn.active::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 2px; background: var(--accent-red); }  
+      .modal-tab-content { display: none; }  
+      .modal-tab-content.active { display: block; animation: fadeIn 0.3s ease; }  
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }  
+      /* ─── MODAL 내부 텍스트 ─── */  
+      .modal-section { margin-bottom: 2.2rem; }  
+      .modal-section-title {  
+      font-size: 0.68rem; letter-spacing: 3px; color: var(--accent-red);  
+      text-transform: uppercase; margin-bottom: 0.8rem; font-weight: bold;  
+      }  
+      .desc-box {  
+      padding: 1.4rem 1.6rem;  
+      background: var(--bg-dark);  
+      border: 1px solid var(--line-color);  
+      margin-bottom: 0.5rem;  
+      }  
+      .desc-box p {  
+      font-size: 0.9rem;  
+      color: var(--text-body);  
+      line-height: 1.85;  
+      word-break: keep-all;  
+      margin: 0;  
+      }  
+      .desc-box p + p { margin-top: 1.2rem; }  
+      .modal-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }  
+      .modal-tag {  
+      font-size: 0.72rem; padding: 0.35rem 0.7rem;  
+      background: var(--bg-dark); border: 1px solid var(--line-color); color: var(--text-muted);  
+      }  
+      .modal-spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }  
+      .modal-spec {  
+      padding: 1rem 1.2rem;  
+      background: var(--bg-dark);  
+      border: 1px solid var(--line-color);  
+      }  
+      .modal-spec .label {  
+      font-size: 0.65rem;  
+      letter-spacing: 2px;  
+      color: var(--text-muted);  
+      text-transform: uppercase;  
+      margin-bottom: 0.4rem;  
+      }  
+      .modal-spec .value {  
+      font-size: 0.85rem;  
+      color: var(--text-main);  
+      line-height: 1.55;  
+      }  
+      .weapon-line {  
+      display: flex; align-items: flex-start; gap: 1rem;  
+      padding: 1.2rem; background: var(--bg-dark); border: 1px solid var(--line-color);  
+      }  
+      .weapon-icon { font-size: 1.4rem; flex-shrink: 0; }  
+      .weapon-text .w-name { font-size: 0.9rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.3rem; }  
+      .weapon-text .w-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; }  
+      /* ─── ZOOMABLE IMAGE EFFECT (풀스크린용) ─── */  
+      .zoomable { cursor: zoom-in; position: relative; overflow: hidden; }  
+      .zoomable::after {  
+      content: '🔍 확대하여 보기';  
+      position: absolute; inset: 0; background: rgba(10,10,12,0.6);  
+      display: flex; align-items: center; justify-content: center;  
+      color: white; font-size: 0.8rem; font-weight: bold; letter-spacing: 2px;  
+      opacity: 0; transition: opacity 0.3s;  
+      }  
+      .zoomable:hover::after { opacity: 1; }  
+      /* ─── FULLSCREEN OVERLAY ─── */  
+      .fullscreen-overlay {  
+      position: fixed; inset: 0; z-index: 9999;  
+      background: rgba(0,0,0,0.92); backdrop-filter: blur(5px);  
+      display: flex; align-items: center; justify-content: center;  
+      opacity: 0; pointer-events: none; transition: opacity 0.3s;  
+      }  
+      .fullscreen-overlay.open { opacity: 1; pointer-events: auto; }  
+      .fullscreen-img { max-width: 90vw; max-height: 90vh; object-fit: contain; box-shadow: 0 0 30px rgba(0,0,0,0.5); }  
+      .fullscreen-close {  
+      position: absolute; top: 2rem; right: 2rem;  
+      background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; transition: transform 0.2s;  
+      }  
+      .fullscreen-close:hover { transform: scale(1.1); }  
+      /* ─── B-CUT GALLERY ─── */  
+      .b-cut-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; }  
+      .b-cut-img { width: 100%; aspect-ratio: 1; background-color: var(--bg-dark); border: 1px solid var(--line-color); background-size: cover; background-position: center; position: relative; }  
+      .b-cut-label { position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(10,10,12,0.85); color: var(--text-muted); font-size: 0.7rem; padding: 0.5rem; letter-spacing: 1px; text-align: center; }  
+      /* ─── MODAL BOTTOM CLOSE BTN ─── */  
+      .modal-bottom-close {  
+      width: 100%; padding: 1rem; margin-top: 1rem;  
+      background: var(--bg-dark); border: 1px solid var(--line-color);  
+      color: var(--text-muted); font-family: inherit; font-size: 0.8rem; letter-spacing: 2px;  
+      text-transform: uppercase; cursor: pointer; transition: all 0.2s;  
+      }  
+      .modal-bottom-close:hover { background: var(--bg-surface); color: var(--text-main); border-color: #444; }  
+      /* ─── RESPONSIVE (모바일 가독성 최적화) ─── */  
+      @media (max-width: 860px) {  
+      .hero { background-position: 75% center; }  /* 모바일에서 토리이가 보이도록 우측 포커스 */
+      .section-wrap { padding: 4rem 5%; }  /* 좌우 여백을 살짝 줄여 텍스트 공간 확보 */  
+      .hero-title { font-size: clamp(3.2rem, 12vw, 4.5rem); } /* 모바일에서 큰 제목이 잘리지 않도록 조정 */  
+      .char-grid, .npc-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }  
+      .worldview-intro { grid-template-columns: 1fr; gap: 2rem; padding: 1.5rem; }  
+      .time-grid { grid-template-columns: 1fr; }  
+      .modal-spec-grid { grid-template-columns: 1fr; gap: 1rem; } /* 모달 내 호불호 칸 세로 배치 */  
+      .modal-tabs { gap: 1rem; flex-wrap: wrap; justify-content: flex-start; } /* 탭 메뉴 겹침 방지 및 줄바꿈 허용 */  
+      .char-name-row { flex-direction: column; align-items: flex-start; gap: 0.3rem; } /* 이름과 랭크 겹침 방지 */  
+      .nav-links { display: none; }  
+      .wv-body { padding-left: 0; }  
+      .worldview-item.active .wv-body { padding-left: 0; }  
+      .hero-scroll { display: none; }  
+      .modal-content { padding: 1.5rem; }  
+      /* 줄간격 & 문단 사이 여백 확장 — 텍스트가 빽빽해지지 않도록 */  
+      body { line-height: 1.75; }  
+      .hero-subtitle { line-height: 2.1; }  
+      .wv-intro-text p { line-height: 2.15; }  
+      .wv-intro-text p + p { margin-top: 1.3rem; }  
+      .wv-stat-content p { line-height: 1.85; }  
+      .wv-body-inner { line-height: 2.2; }  
+      .wv-body-inner p + p { margin-top: 1.5rem; }  
+      .desc-box p { line-height: 2.05; }  
+      .desc-box p + p { margin-top: 1.4rem; }  
+      .desc-box { padding: 1.2rem 1.3rem; margin-bottom: 0.9rem; }  
+      .t-desc { line-height: 1.85; }  
+      .time-cell { padding: 1.3rem; }  
+      .time-grid { gap: 0.9rem; }  
+      .char-keywords { line-height: 2.1; margin-bottom: 1.2rem; }  
+      .char-quote { line-height: 1.95; }  
+      .modal-section { margin-bottom: 2.6rem; }  
+      .worldview-item.active .wv-body { padding: 0 0 2.4rem 0; }  
+      .wv-header { padding: 1.5rem 0; }  
+      /* 카드/모달 높이가 내용에 맞춰 자연스럽게 늘어나도록 — 텍스트 잘림 방지 */  
+      .char-card { height: auto; }  
+      .char-info { height: auto; overflow: visible; }  
+      .modal-img { height: clamp(220px, 32vh, 320px); }  
+      .worldview-item.active .wv-body { max-height: 4000px; } /* 줄간격 확장으로 콘텐츠가 길어져도 잘리지 않게 여유값 부여 */  
+      }  
+    </style>  
+  </head>  
+  <body>  
+    <audio id="bgm-audio" loop autoplay>  
+      <source src="bgm.mp3" type="audio/mpeg">  
+    </audio>  
+    <nav>  
+      <div class="logo-wrap">  
+        <div class="logo-dot">  
+        </div>  
+        HAKUBO  
+      </div>  
+      <div class="nav-right">  
+        <ul class="nav-links">  
+          <li>  
+            <a href="#worldview">세계관</a>  
+          </li>  
+          <li>  
+            <a href="#npcs">단역</a>  
+          </li>  
+          <li>  
+            <a href="#characters">식구</a>  
+          </li>  
+        </ul>  
+        <button id="bgm-toggle" class="bgm-btn" onclick="toggleBGM()">  
+          BGM <span id="bgm-status" style="color: var(--accent-red);">ON</span>  
+        </button>  
+      </div>  
+    </nav>  
+    <section class="hero">  
+      <div class="hero-content">  
+        <div class="hero-eyebrow">도쿄 오쿠타마 깊은 산속</div>  
+        <h1 class="hero-title">  
+          HAKUBO<br>SHRINE  
+          <span class="ko">薄暮 神社</span>  
+        </h1>  
+        <p class="hero-subtitle">해가 지고 요괴들이 깨어나는 경계의 시간.<br>쇠락해가는 신사의 황혼기가 시작되었다.</p>  
+      </div>  
+      <div class="hero-scroll">  
+        <div class="scroll-line">  
+        </div>  
+        SCROLL  
+      </div>  
+    </section>  
+    <section class="section-wrap" id="worldview">  
+      <div class="section-header">  
+        <p class="section-eyebrow">Hidden Truth</p>  
+        <h2 class="section-title">세계관</h2>  
+        <div class="section-divider">  
+        </div>  
+      </div>  
+      <div class="worldview-intro">  
+        <div class="wv-intro-text">  
+          <h3>이면의 일본, 신과 요괴의 세계</h3>  
+          <p>현대 일본의 이면에는 인간들이 알지 못하는 또 다른 세계가 펼쳐진다. 신계와 인간계는 거리의 개념이 모호한 채 공존하며, 붉은 토리이만이 두 신계를 잇는 유일한 통로다.</p>  
+          <p style="margin-top:1rem;">도쿄 오쿠타마 깊은 산속의 하쿠보 신사는 한때 번성했지만, 지금은 신도가 한 명도 없는 폐업 직전의 적자 신사다. 세 명의 식구들이 요괴관리국의 하청으로 요괴를 토벌하며 근근이 유지비와 세금을 충당하고 일상을 이어간다.</p>  
+        </div>  
+        <div class="wv-stats">  
+          <div class="wv-stat">  
+            <div class="wv-stat-icon">⛩️</div>  
+            <div class="wv-stat-content">  
+              <h5>하쿠보 (薄暮)</h5>  
+              <p>땅거미, 옅은 저녁놀. 요괴가 깨어나는 경계의 시간이자 쇠락해가는 신사의 황혼기를 의미한다.</p>  
+            </div>  
+          </div>  
+          <div class="wv-stat">  
+            <div class="wv-stat-icon">📜</div>  
+            <div class="wv-stat-content">  
+              <h5>신맥 (神脈)</h5>  
+              <p>현대 문물을 불신하는 신사의 방침으로, 디지털 기기 대신 오직 수기로만 작성하는 통신망이다.</p>  
+            </div>  
+          </div>  
+          <div class="wv-stat">  
+            <div class="wv-stat-icon">🦊</div>  
+            <div class="wv-stat-content">  
+              <h5>식구 체제</h5>  
+              <p>주신과 권속으로 구성된 신사의 구성원. 사이는 최악이지만 위기엔 가장 먼저 서로를 챙긴다.</p>  
+            </div>  
+          </div>  
+        </div>  
+      </div>  
+      <div class="worldview-list">  
+        <div class="worldview-item" onclick="toggleWv(this)">  
+          <button class="wv-header">  
+            <div class="wv-header-left">  
+              <span class="wv-num">01</span>  
+              <h4>신격 (神格)과 등급 체계</h4>  
+            </div>  
+            <div class="wv-toggle">+</div>  
+          </button>  
+          <div class="wv-body">  
+            <div class="wv-body-inner">  
+              <p>신격은 인간의 신앙, 참배, 혹은 계약이 성립할 때 쌓인다. 대중에게 잊히면 소멸하거나 재해신으로 타락의 길을 걷게 된다. 신격의 높낮이에 따라 발휘할 수 있는 권능과 현실 간섭의 제약이 극명하게 갈린다.</p>  
+              <div class="desc-box" style="margin-top: 1rem;">  
+                <p>  
+                  <strong>· 하급신 / 중급신 (예: 시로가네)</strong>  
+                  <br>비교적 현실 간섭이 자유로워 장기 체류나 일상적인 활동이 가능하다. 권능에는 한계가 있으나 신사의 실질적인 실무와 현장 토벌을 담당하기에 가장 적합한 계급이다.</p>  
+                  <p>  
+                    <strong>· 상급신 (예: 아카네)</strong>  
+                    <br>특정 분야(계약, 환술 등)에서 강력하고 절대적인 권능을 행사한다. 하지만 힘을 쓸수록 막대한 신격이 소모되기 때문에 함부로 힘을 남용할 수 없다.</p>  
+                    <p>  
+                      <strong>· 대신급 / 고위신 (예: 후진)</strong>  
+                      <br>숭배의 정점에 선 존재로, 비바람을 부르는 등 자연재해에 가까운 압도적인 권능을 지니고 있다. 그러나 그 존재 자체가 현실에 막대한 영향(인간의 정신 붕괴 등)을 미치기 때문에 특정 신역(신사) 밖으로 나갈 수 없으며, 스스로를 봉인하듯 속박해야만 장기 체류가 가능하다.</p>  
+                    </div>  
+                  </div>  
+                </div>  
+              </div>  
+              <div class="worldview-item" onclick="toggleWv(this)">  
+                <button class="wv-header">  
+                  <div class="wv-header-left">  
+                    <span class="wv-num">02</span>  
+                    <h4>시간대와 분위기</h4>  
+                  </div>  
+                  <div class="wv-toggle">+</div>  
+                </button>  
+                <div class="wv-body">  
+                  <div class="wv-body-inner">  
+                    <p>이 세계에서 시간대는 단순한 배경이 아니다. 시각에 따라 요괴의 활성도가 확연히 달라지며, 신사 안의 분위기와 위험 수위도 시간에 비례하여 크게 요동친다.</p>  
+                    <div class="time-grid">  
+                      <div class="time-cell">  
+                        <div class="t-label">낮 · 10~17시</div>  
+                        <div class="t-desc">나른하고 평화로운 일상 속 시간대. 요괴의 활동이 잠잠하며, 식구들 간의 가벼운 티카타카가 가장 자주 오가는 여유로운 때이다.</div>  
+                      </div>  
+                      <div class="time-cell">  
+                        <div class="t-label">저녁 · 18~23시</div>  
+                        <div class="t-desc">해가 저물며 어둠이 차오르기 시작하는 시간대. 전반적인 분위기가 차분해지고, 겉으로 드러나지 않던 감정선이 조용히 깊어진다.</div>  
+                      </div>  
+                      <div class="time-cell danger">  
+                        <div class="t-label">경계 · 자정</div>  
+                        <div class="t-desc">일상과 비일상이 교차하는 불온한 시간대. 불길한 조짐이 반드시 얼굴을 드러내며, 긴장감이 서서히 고조된다.</div>  
+                      </div>  
+                      <div class="time-cell danger">  
+                        <div class="t-label">심야 · 0~4시</div>  
+                        <div class="t-desc">요괴가 가장 활발히 활개 치는 시간대. 생존과 토벌을 위한 팽팽하고 날 선 긴장감이 공기 중에 감돈다.</div>  
+                      </div>  
+                    </div>  
+                  </div>  
+                </div>  
+              </div>  
+              <div class="worldview-item" onclick="toggleWv(this)">  
+                <button class="wv-header">  
+                  <div class="wv-header-left">  
+                    <span class="wv-num">03</span>  
+                    <h4>요괴와 재해신</h4>  
+                  </div>  
+                  <div class="wv-toggle">+</div>  
+                </button>  
+                <div class="wv-body">  
+                  <div class="wv-body-inner">  
+                    <p>요괴는 인간의 부정적인 감정에서 태어난다. 황혼과 자정, 음습하고 폐쇄된 구역에서 주로 활동하며 심야로 갈수록 위험도가 급증한다.</p>  
+                    <p>재해신은 잊혀지거나 왜곡된 신앙으로 타락한 신이다. 단순한 요괴와 달리 인간에게 빙의하거나 육체를 갈아타며 사이비 종교, 도시 오염의 배후가 된다. 요괴관리국의 최우선 제거 대상이다.</p>  
+                  </div>  
+                </div>  
+              </div>  
+              <div class="worldview-item" onclick="toggleWv(this)">  
+                <button class="wv-header">  
+                  <div class="wv-header-left">  
+                    <span class="wv-num">04</span>  
+                    <h4>관련 기관</h4>  
+                  </div>  
+                  <div class="wv-toggle">+</div>  
+                </button>  
+                <div class="wv-body">  
+                  <div class="wv-body-inner">  
+                    <p>하쿠보 신사를 둘러싼 이면 세계에는 요괴 토벌 및 정보망과 관련된 주요 기관들이 존재한다.</p>  
+                    <div class="time-grid">  
+                      <div class="time-cell">  
+                        <div class="t-label">요괴관리국</div>  
+                        <div class="t-desc">정부 산하 기관. 재해신과 요괴 관리가 주 목적이며, 적자에 시달리는 하쿠보 신사에 토벌 하청을 내린다. 재해신을 최우선 제거 대상으로 삼는다.</div>  
+                      </div>  
+                      <div class="time-cell">  
+                        <div class="t-label">텐구특급</div>  
+                        <div class="t-desc">신계와 인간계를 넘나들며 물건을 나르는 이면 세계의 운송 전문 기관.</div>  
+                      </div>  
+                      <div class="time-cell">  
+                        <div class="t-label">너구리 정보상</div>  
+                        <div class="t-desc">지불하는 금액에 따라 정보의 질이 달라지는 뒷골목의 정보상. 요괴의 동향부터 은밀한 약점까지 취급한다.</div>  
+                      </div>  
+                    </div>  
+                  </div>  
+                </div>  
+              </div>  
+              <div class="worldview-item" onclick="toggleWv(this)">  
+                <button class="wv-header">  
+                  <div class="wv-header-left">  
+                    <span class="wv-num">05</span>  
+                    <h4>단역 (NPC)</h4>  
+                  </div>  
+                  <div class="wv-toggle">+</div>  
+                </button>  
+                <div class="wv-body">  
+                  <div class="wv-body-inner">  
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; padding-top: 0.5rem;">  
+                      <li>  
+                        <span style="color: var(--text-muted); font-size: 0.88rem;">시로가네의 햄스터 — </span>  
+                        <a href="javascript:void(0);" onclick="openNPCModal(event, 'hamzzi')" style="color: var(--text-main); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--line-color); padding-bottom: 2px; transition: all 0.2s;" onmouseover="this.style.color='var(--accent-red)'; this.style.borderColor='var(--accent-red)';" onmouseout="this.style.color='var(--text-main)'; this.style.borderColor='var(--line-color)';">햄찌</a>  
+                      </li>  
+                      <li>  
+                        <span style="color: var(--text-muted); font-size: 0.88rem;">요괴관리국 소속 특별 감찰관 — </span>  
+                        <a href="javascript:void(0);" onclick="openNPCModal(event, 'nekomaru')" style="color: var(--text-main); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--line-color); padding-bottom: 2px; transition: all 0.2s;" onmouseover="this.style.color='var(--accent-red)'; this.style.borderColor='var(--accent-red)';" onmouseout="this.style.color='var(--text-main)'; this.style.borderColor='var(--line-color)';">네코마루 자매</a>  
+                      </li>  
+                      <li>  
+                        <span style="color: var(--text-muted); font-size: 0.88rem;">텐구특급 소속 배달부 — </span>  
+                        <a href="javascript:void(0);" onclick="openNPCModal(event, 'tenma')" style="color: var(--text-main); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--line-color); padding-bottom: 2px; transition: all 0.2s;" onmouseover="this.style.color='var(--accent-red)'; this.style.borderColor='var(--accent-red)';" onmouseout="this.style.color='var(--text-main)'; this.style.borderColor='var(--line-color)';">카라스바 텐마</a>  
+                      </li>  
+                      <li>  
+                        <span style="color: var(--text-muted); font-size: 0.88rem;">너구리 정보상 — </span>  
+                        <a href="javascript:void(0);" onclick="openNPCModal(event, 'mamijiro')" style="color: var(--text-main); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--line-color); padding-bottom: 2px; transition: all 0.2s;" onmouseover="this.style.color='var(--accent-red)'; this.style.borderColor='var(--accent-red)';" onmouseout="this.style.color='var(--text-main)'; this.style.borderColor='var(--line-color)';">마미지로</a>  
+                      </li>  
+                    </ul>  
+                  </div>  
+                </div>  
+              </div>  
+            </div>  
+          </section>  
+          <section class="section-wrap" id="npcs" style="padding-top: 0; display: none !important;">  
+            <div class="section-header" style="position: relative;">  
+              <p class="section-eyebrow">Others</p>  
+              <h2 class="section-title">단역 (NPC)</h2>  
+              <div class="section-divider">  
+              </div>  
+              <button onclick="hideNPCs()" style="position: absolute; right: 0; bottom: 0; background: none; border: 1px solid var(--line-color); color: var(--text-muted); padding: 0.4rem 0.8rem; font-size: 0.75rem; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.color='var(--accent-red)'; this.style.borderColor='var(--accent-red)';" onmouseout="this.style.color='var(--text-muted)'; this.style.borderColor='var(--line-color)';">  
+                단역 탭 닫기 ✕  
+              </button>  
+            </div>  
+            <div class="npc-grid">  
+              <div class="char-card" onclick="openModal('hamzzi')">  
+                <div class="char-img-wrap">  
+                  <div class="char-img" style="background-image: url('https://jd82.uk/hkb/N/0.png');">  
+                  </div>  
+                  <div class="char-img-overlay">  
+                  </div>  
+                  <div class="char-img-badge">수컷 햄스터</div>  
+                  <div class="char-img-view">View Info →</div>  
+                </div>  
+                <div class="char-info">  
+                  <div class="char-name-row">  
+                    <h3 style="color:#F4D03F;">햄찌</h3>  
+                    <span class="char-rank">신사 내 서열 최상위권</span>  
+                  </div>  
+                  <p class="char-keywords">시로가네가 비상식량으로 칭하지만, 실질적으로는 신사의 실세를 장악한 영악한 수컷 햄스터.</p>  
+                  <p class="char-quote">"...찍?"</p>  
+                  <button class="char-more-btn">  
+                    <span class="arrow">→</span> 상세 정보</button>  
+                  </div>  
+                </div>  
+                <div class="char-card" onclick="openModal('nekomaru')">  
+                  <div class="char-img-wrap">  
+                    <div class="char-img" style="background-image: url('https://jd82.uk/hkb/N/1.PNG');">  
+                    </div>  
+                    <div class="char-img-overlay">  
+                    </div>  
+                    <div class="char-img-badge">특별 감찰관 · 고양이 요괴</div>  
+                    <div class="char-img-view">View Info →</div>  
+                  </div>  
+                  <div class="char-info">  
+                    <div class="char-name-row">  
+                      <h3 style="color:#F48FB1;">네코마루 자매</h3>  
+                      <span class="char-rank">800세 · 150cm</span>  
+                    </div>  
+                    <p class="char-keywords">매년 가을 나타나 시로가네의 위장을 괴롭히는 요괴관리국 소속 특별 감찰관 쌍둥이 자매.</p>  
+                    <p class="char-quote">"신사의 장부가 이리도 엉망이라니, 짐이 친히 바로잡아 주겠노라!"</p>  
+                    <button class="char-more-btn">  
+                      <span class="arrow">→</span> 상세 정보</button>  
+                    </div>  
+                  </div>  
+                  <div class="char-card" onclick="openModal('tenma')">  
+                    <div class="char-img-wrap">  
+                      <div class="char-img" style="background-image: url('https://jd82.uk/hkb/N/2.png');">  
+                      </div>  
+                      <div class="char-img-overlay">  
+                      </div>  
+                      <div class="char-img-badge">텐구특급 · 까마귀 텐구</div>  
+                      <div class="char-img-view">View Info →</div>  
+                    </div>  
+                    <div class="char-info">  
+                      <div class="char-name-row">  
+                        <h3 style="color:#BDBDBD;">카라스바 텐마</h3>  
+                        <span class="char-rank">700세 · 210cm</span>  
+                      </div>  
+                      <p class="char-keywords">시간 약속에 병적으로 집착하는 과묵하고 성실한 텐구 특급 소속 배송원. 배송 성공률 99.9%.</p>  
+                      <p class="char-quote">"추가 위험 수당 30%가 가산되었습니다. 이견이 없으시다면 서명 부탁드립니다."</p>  
+                      <button class="char-more-btn">  
+                        <span class="arrow">→</span> 상세 정보</button>  
+                      </div>  
+                    </div>  
+                    <div class="char-card" onclick="openModal('mamijiro')">  
+                      <div class="char-img-wrap">  
+                        <div class="char-img" style="background-image: url('https://jd82.uk/hkb/N/3.png');">  
+                        </div>  
+                        <div class="char-img-overlay">  
+                        </div>  
+                        <div class="char-img-badge">정보상 · 너구리 요괴</div>  
+                        <div class="char-img-view">View Info →</div>  
+                      </div>  
+                      <div class="char-info">  
+                        <div class="char-name-row">  
+                          <h3 style="color:#D7CCC8;">마미지로</h3>  
+                          <span class="char-rank">1500세 · 172cm</span>  
+                        </div>  
+                        <p class="char-keywords">돈과 은밀한 소문을 세상에서 가장 사랑하는 신계 최고의 너구리 정보상.</p>  
+                        <p class="char-quote">"세상에 공짜 정보는 없는 법이지요. 지불하신 금액만큼의 '진실'만 드리겠습니다."</p>  
+                        <button class="char-more-btn">  
+                          <span class="arrow">→</span> 상세 정보</button>  
+                        </div>  
+                      </div>  
+                    </div>  
+                  </section>  
+                  <section class="section-wrap" id="characters" style="padding-top: 0;">  
+                    <div class="section-header">  
+                      <p class="section-eyebrow">Meet the Family</p>  
+                      <h2 class="section-title">소속 식구</h2>  
+                      <div class="section-divider">  
+                      </div>  
+                    </div>  
+                    <div class="char-grid">  
+                      <div class="char-card" onclick="openModal('shirogane')">  
+                        <div class="char-img-wrap">  
+                          <div class="char-img" style="background-image: url('https://placehold.co/800x1200/1a1a20/333333?text=Shirogane');">  
+                          </div>  
+                          <div class="char-img-overlay">  
+                          </div>  
+                          <div class="char-img-badge">중급신 · 은여우</div>  
+                          <div class="char-img-view">View Profile →</div>  
+                        </div>  
+                        <div class="char-info">  
+                          <div class="char-name-row">  
+                            <h3 style="color:#A0C4FF;">시로가네</h3>  
+                            <span class="char-rank">120세 · 178cm</span>  
+                          </div>  
+                          <p class="char-keywords">강박에 가까운 원칙주의자. 신사의 회계, 현장 업무, 징벌을 혼자 도맡아 적자 상황에 가장 민감하게 반응한다.</p>  
+                          <p class="char-quote">"... 뭘 봐? 눈 안 깔아!?"</p>  
+                          <button class="char-more-btn">  
+                            <span class="arrow">→</span> 상세 프로필</button>  
+                          </div>  
+                        </div>  
+                        <div class="char-card" onclick="openModal('akane')">  
+                          <div class="char-img-wrap">  
+                            <div class="char-img" style="background-image: url('https://placehold.co/800x1200/2a1a1a/442222?text=Akane');">  
+                            </div>  
+                            <div class="char-img-overlay">  
+                            </div>  
+                            <div class="char-img-badge">상급신 · 구미호</div>  
+                            <div class="char-img-view">View Profile →</div>  
+                          </div>  
+                          <div class="char-info">  
+                            <div class="char-name-row">  
+                              <h3 style="color:#FF8A80;">아카네</h3>  
+                              <span class="char-rank">700세 · 190cm</span>  
+                            </div>  
+                            <p class="char-keywords">타고난 협상가이자 도박꾼. 말로는 누구도 이기지 못하지만, 번 돈은 도박판에서 더 빠르게 사라진다.</p>  
+                            <p class="char-quote">"명중, 지금부터 넌 이틀간 신사 청소 담당이다."</p>  
+                            <button class="char-more-btn">  
+                              <span class="arrow">→</span> 상세 프로필</button>  
+                            </div>  
+                          </div>  
+                          <div class="char-card" onclick="openModal('fujin')">  
+                            <div class="char-img-wrap">  
+                              <div class="char-img" style="background-image: url('https://placehold.co/800x1200/1a1a25/2d2d44?text=Fujin');">  
+                              </div>  
+                              <div class="char-img-overlay">  
+                              </div>  
+                              <div class="char-img-badge">대신급 · 주신</div>  
+                              <div class="char-img-view">View Profile →</div>  
+                            </div>  
+                            <div class="char-info">  
+                              <div class="char-name-row">  
+                                <h3 style="color:#D7A1F9;">후진</h3>  
+                                <span class="char-rank">1000세 · 182cm</span>  
+                              </div>  
+                              <p class="char-keywords">압도적인 신격의 대신급 주신. 대부분의 시간을 수면과 다도로 보내며, 신역 밖으로는 나가지 못한다.</p>  
+                              <p class="char-quote">"...귀찮아."</p>  
+                              <button class="char-more-btn">  
+                                <span class="arrow">→</span> 상세 프로필</button>  
+                              </div>  
+                            </div>  
+                          </div>  
+                        </section>  
+                        <footer class="footer" style="text-align:center; padding: 3rem; border-top: 1px solid var(--line-color);">  
+                          <div class="footer-logo" style="font-family: 'Oswald', sans-serif; letter-spacing: 4px;">HAKUBO SHRINE</div>  
+                          <div class="footer-note" style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem;">薄暮神社 · 도쿄 오쿠타마</div>  
+                        </footer>  
+                        <div class="modal-overlay" id="modal-hamzzi" onclick="closeModalOutside(event)">  
+                          <div class="modal">  
+                            <button class="modal-close" onclick="closeModal('hamzzi')">✕</button>  
+                            <div class="modal-body">  
+                              <div class="modal-img zoomable" style="background-image: url('https://jd82.uk/hkb/N/0.png');" onclick="openFullscreen('https://jd82.uk/hkb/N/0.png')">  
+                              </div>  
+                              <div class="modal-content">  
+                                <p class="modal-eyebrow">수컷 햄스터</p>  
+                                <h2 class="modal-name" style="color:#F4D03F;">햄찌</h2>  
+                                <p class="modal-rank">신사 내 서열 최상위권</p>  
+                                <div class="modal-tabs">  
+                                  <button class="modal-tab-btn active" onclick="switchTab('hamzzi', 'info')">기본 정보</button>  
+                                  <button class="modal-tab-btn" onclick="switchTab('hamzzi', 'bcut')">B컷 갤러리</button>  
+                                </div>  
+                                <div id="hamzzi-info" class="modal-tab-content active">  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">상세 설정</p>  
+                                    <div class="desc-box">  
+                                      <p>시로가네가 비상식량이라 부르며 데려왔지만, 사실상 신사의 실세를 차지하고 있는 영악한 수컷 햄스터입니다.</p>  
+                                      <p>신력을 먹고 자라 평범한 햄스터보다 훨씬 긴 수명과 뛰어난 지능을 자랑합니다. 사람의 말을 알아듣고 식구들을 제집 부하처럼 부리며, 특히 시로가네의 비상금을 찾아내 몰래 숨기는 것을 즐깁니다. 혼이 나도 뻔뻔하게 해바라기씨를 까먹는 여유를 보입니다.</p>  
+                                    </div>  
+                                    <div class="modal-tags">  
+                                      <span class="modal-tag">#신사_서열1위</span>  
+                                      <span class="modal-tag">#영악함</span>  
+                                      <span class="modal-tag">#비상금_도둑</span>  
+                                    </div>  
+                                  </div>  
+                                </div>  
+                                <div id="hamzzi-bcut" class="modal-tab-content">  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">Gallery</p>  
+                                    <div class="b-cut-grid">  
+                                      <div class="b-cut-img zoomable" style="background-image: url('https://jd82.uk/hkb/N/ham.png');" onclick="openFullscreen('https://jd82.uk/hkb/N/ham.png')">  
+                                        <div class="b-cut-label">간식 먹는 햄찌</div>  
+                                      </div>  
+                                      <div class="b-cut-img zoomable" style="background-image: url('https://jd82.uk/hkb/N/hamsdream.png');" onclick="openFullscreen('https://jd82.uk/hkb/N/hamsdream.png')">  
+                                        <div class="b-cut-label">햄찌의 꿈</div>  
+                                      </div>  
+                                    </div>  
+                                  </div>  
+                                </div>  
+                                <button class="modal-bottom-close" onclick="closeModal('hamzzi')">닫기 ✕</button>  
+                              </div>  
+                            </div>  
+                          </div>  
+                        </div>  
+                        <div class="modal-overlay" id="modal-nekomaru" onclick="closeModalOutside(event)">  
+                          <div class="modal">  
+                            <button class="modal-close" onclick="closeModal('nekomaru')">✕</button>  
+                            <div class="modal-body">  
+                              <div class="modal-img zoomable" style="background-image: url('https://jd82.uk/hkb/N/1.PNG');" onclick="openFullscreen('https://jd82.uk/hkb/N/1.PNG')">  
+                              </div>  
+                              <div class="modal-content">  
+                                <p class="modal-eyebrow">요괴관리국 소속 특별 감찰관 · 고양이 요괴 · 800세</p>  
+                                <h2 class="modal-name" style="color:#F48FB1;">네코마루 자매</h2>  
+                                <p class="modal-rank">모모 (언니) & 유키 (동생)</p>  
+                                <div class="modal-tabs">  
+                                  <button class="modal-tab-btn active" onclick="switchTab('nekomaru', 'info')">기본 정보</button>  
+                                  <button class="modal-tab-btn" onclick="switchTab('nekomaru', 'bcut')">B컷 갤러리</button>  
+                                </div>  
+                                <div id="nekomaru-info" class="modal-tab-content active">  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">상세 설정</p>  
+                                    <div class="desc-box">  
+                                      <p>매년 가을, 하쿠보 신사의 전반적인 감사를 위해 파견되는 요괴관리국 소속의 쌍둥이 고양이 요괴입니다. 이들이 나타날 때마다 시로가네는 극심한 위통을 호소합니다.</p>  
+                                    </div>  
+                                    <div class="desc-box" style="border-left: 3px solid #F48FB1; margin-top: 0.8rem;">  
+                                      <p style="color: #F48FB1; font-weight: bold; font-size: 0.85rem; letter-spacing: 1px;">[ 모모 (언니) ]</p>  
+                                      <p>장발 트윈테일에 풍성하고 큰 꼬리가 특징. 오만하고 독설을 서슴지 않는 규정주의자로 주로 시로가네의 장부를 꼬투리 잡으며 속을 긁어놓습니다.</p>  
+                                      <p style="color: var(--text-muted); font-style: italic; margin-top: 0.5rem;">"신사의 장부가 이리도 엉망이라니, 짐이 친히 바로잡아 주겠노라!"</p>  
+                                    </div>  
+                                    <div class="desc-box" style="border-left: 3px solid #F48FB1; margin-top: 0.8rem;">  
+                                      <p style="color: #F48FB1; font-weight: bold; font-size: 0.85rem; letter-spacing: 1px;">[ 유키 (동생) ]</p>  
+                                      <p>로우 트윈테일에 짧고 작은 꼬리가 특징. 온화하고 포용적인 성격으로 식구들을 감싸 안으며, 폭주하는 언니를 제지하곤 합니다.</p>  
+                                      <p style="color: var(--text-muted); font-style: italic; margin-top: 0.5rem;">"그래도 다들 열심히 하고 있지 않느냐. 짐은 훌륭하다 생각하노라."</p>  
+                                    </div>  
+                                    <div class="modal-tags">  
+                                      <span class="modal-tag">#요괴관리국</span>  
+                                      <span class="modal-tag">#쌍둥이_감사관</span>  
+                                      <span class="modal-tag">#극과극_성격</span>  
+                                    </div>  
+                                  </div>  
+                                </div>  
+                                <div id="nekomaru-bcut" class="modal-tab-content">  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">Gallery</p>  
+                                    <div class="b-cut-grid">  
+                                      <div class="b-cut-img zoomable" style="background-image: url('https://jd82.uk/hkb/N/momo.jpg');" onclick="openFullscreen('https://jd82.uk/hkb/N/momo.jpg')">  
+                                        <div class="b-cut-label">모모의 독설</div>  
+                                      </div>  
+                                      <div class="b-cut-img zoomable" style="background-image: url('https://jd82.uk/hkb/N/yuki.jpg');" onclick="openFullscreen('https://jd82.uk/hkb/N/yuki.jpg')">  
+                                        <div class="b-cut-label">유키의 미소</div>  
+                                      </div>  
+                                    </div>  
+                                  </div>  
+                                </div>  
+                                <button class="modal-bottom-close" onclick="closeModal('nekomaru')">닫기 ✕</button>  
+                              </div>  
+                            </div>  
+                          </div>  
+                        </div>  
+                        <div class="modal-overlay" id="modal-tenma" onclick="closeModalOutside(event)">  
+                          <div class="modal">  
+                            <button class="modal-close" onclick="closeModal('tenma')">✕</button>  
+                            <div class="modal-body">  
+                              <div class="modal-img zoomable" style="background-image: url('https://jd82.uk/hkb/N/2.png');" onclick="openFullscreen('https://jd82.uk/hkb/N/2.png')">  
+                              </div>  
+                              <div class="modal-content">  
+                                <p class="modal-eyebrow">텐구 특급 소속 배달부 · 까마귀 텐구 · 700세</p>  
+                                <h2 class="modal-name" style="color:#BDBDBD;">카라스바 텐마</h2>  
+                                <p class="modal-rank">배송 성공률 99.9% 의 프로페셔널</p>  
+                                <div class="modal-tabs">  
+                                  <button class="modal-tab-btn active" onclick="switchTab('tenma', 'info')">기본 정보</button>  
+                                  <button class="modal-tab-btn" onclick="switchTab('tenma', 'bcut')">B컷 갤러리</button>  
+                                </div>  
+                                <div id="tenma-info" class="modal-tab-content active">  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">상세 설정</p>  
+                                    <div class="desc-box">  
+                                      <p>이면 세계의 물류를 책임지는 텐구 특급의 베테랑 배송원으로, 거대한 검은 날개를 지닌 까마귀 텐구입니다.</p>  
+                                      <p>시간 약속에 대한 강박에 가까운 집착과 투철한 직업 정신을 자랑합니다. 요괴가 우글거리는 위험 지대라도 추가 수당만 있다면 완벽하게 물건을 배송해 내며, 영세한 하쿠보 신사의 사정을 어느 정도 헤아려주는 은근한 배려심도 갖추고 있습니다.</p>  
+                                    </div>  
+                                    <div class="modal-tags">  
+                                      <span class="modal-tag">#텐구특급</span>  
+                                      <span class="modal-tag">#완벽주의_배송</span>  
+                                      <span class="modal-tag">#과묵한_성실함</span>  
+                                    </div>  
+                                  </div>  
+                                </div>  
+                                <div id="tenma-bcut" class="modal-tab-content">  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">Gallery</p>  
+                                    <div class="b-cut-grid">  
+                                      <div class="b-cut-img zoomable" style="background-image: url('https://jd82.uk/hkb/N/tenma1.png');" onclick="openFullscreen('https://jd82.uk/hkb/N/tenma1.png')">  
+                                        <div class="b-cut-label">배달 중인 텐마</div>  
+                                      </div>  
+                                      <div class="b-cut-img zoomable" style="background-image: url('https://jd82.uk/hkb/N/tenma2.png');" onclick="openFullscreen('https://jd82.uk/hkb/N/tenma2.png')">  
+                                        <div class="b-cut-label">일상의 텐마</div>  
+                                      </div>  
+                                    </div>  
+                                  </div>  
+                                </div>  
+                                <button class="modal-bottom-close" onclick="closeModal('tenma')">닫기 ✕</button>  
+                              </div>  
+                            </div>  
+                          </div>  
+                        </div>  
+                        <div class="modal-overlay" id="modal-mamijiro" onclick="closeModalOutside(event)">  
+                          <div class="modal">  
+                            <button class="modal-close" onclick="closeModal('mamijiro')">✕</button>  
+                            <div class="modal-body">  
+                              <div class="modal-img zoomable" style="background-image: url('https://jd82.uk/hkb/N/3.png');" onclick="openFullscreen('https://jd82.uk/hkb/N/3.png')">  
+                              </div>  
+                              <div class="modal-content">  
+                                <p class="modal-eyebrow">신계 최고 정보상 · 너구리 요괴 · 1500세</p>  
+                                <h2 class="modal-name" style="color:#D7CCC8;">마미지로</h2>  
+                                <p class="modal-rank">돈과 비밀을 사랑하는 뒷골목의 능구렁이</p>  
+                                <div class="modal-tabs">  
+                                  <button class="modal-tab-btn active" onclick="switchTab('mamijiro', 'info')">기본 정보</button>  
+                                  <button class="modal-tab-btn" onclick="switchTab('mamijiro', 'bcut')">B컷 갤러리</button>  
+                                </div>  
+                                <div id="mamijiro-info" class="modal-tab-content active">  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">상세 설정</p>  
+                                    <div class="desc-box">  
+                                      <p>돈과 은밀한 소문을 세상에서 가장 사랑하는 신계 최고의 너구리 정보상입니다.</p>  
+                                      <p>친절하고 능글맞은 미소 뒤에 교활한 속내를 감추고 있으며, 의뢰인이 지불하는 금액에 따라 정보의 질과 진실의 비율을 교묘하게 조절합니다. 신의보다는 철저한 이익을 추구하기에, 비슷한 부류인 아카네와는 서로를 사기꾼이라 부르며 지독한 경계심을 드러냅니다.</p>  
+                                    </div>  
+                                    <div class="modal-tags">  
+                                      <span class="modal-tag">#신계_정보상</span>  
+                                      <span class="modal-tag">#돈과_비밀</span>  
+                                      <span class="modal-tag">#능구렁이</span>  
+                                    </div>  
+                                  </div>  
+                                </div>  
+                                <div id="mamijiro-bcut" class="modal-tab-content">  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">Gallery</p>  
+                                    <div class="b-cut-grid">  
+                                      <div class="b-cut-img zoomable" style="background-image: url('https://jd82.uk/hkb/N/mm1.png');" onclick="openFullscreen('https://jd82.uk/hkb/N/mm1.png')">  
+                                        <div class="b-cut-label">무기력한 마미지로</div>  
+                                      </div>  
+                                      <div class="b-cut-img zoomable" style="background-image: url('https://jd82.uk/hkb/N/mm2.png');" onclick="openFullscreen('https://jd82.uk/hkb/N/mm2.png')">  
+                                        <div class="b-cut-label">영업중인 마미지로</div>  
+                                      </div>  
+                                    </div>  
+                                  </div>  
+                                </div>  
+                                <button class="modal-bottom-close" onclick="closeModal('mamijiro')">닫기 ✕</button>  
+                              </div>  
+                            </div>  
+                          </div>  
+                        </div>  
+                        <div class="modal-overlay" id="modal-shirogane" onclick="closeModalOutside(event)">  
+                          <div class="modal">  
+                            <button class="modal-close" onclick="closeModal('shirogane')">✕</button>  
+                            <div class="modal-body">  
+                              <div class="modal-img zoomable" style="background-image: url('https://placehold.co/800x1200/1a1a20/333333?text=Shirogane');" onclick="openFullscreen('https://placehold.co/800x1200/1a1a20/333333?text=Shirogane')">  
+                              </div>  
+                              <div class="modal-content">  
+                                <p class="modal-eyebrow">중급신 · 은여우 · ISTJ · 12/31</p>  
+                                <h2 class="modal-name" style="color:#A0C4FF;">시로가네</h2>  
+                                <p class="modal-rank">백은의 징벌신 · 현장 업무, 회계, 청소 담당</p>  
+                                <div class="modal-tabs">  
+                                  <button class="modal-tab-btn active" onclick="switchTab('shirogane', 'info')">기본 정보</button>  
+                                  <button class="modal-tab-btn" onclick="switchTab('shirogane', 'secret')">비밀 설정 🔐</button>  
+                                  <button class="modal-tab-btn" onclick="switchTab('shirogane', 'bcut')">B컷 갤러리</button>  
+                                </div>  
+                                <div id="shirogane-info" class="modal-tab-content active">  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">외형</p>  
+                                    <div class="desc-box">  
+                                      <p>은빛 백발을 반묶음으로 정리한 마른 체형의 미소년이다. 좌안에 안대를 매고 있으며, 벽안과 눈에 띄는 송곳니가 인상적이다. 블랙 하이넥에 화이트 퍼 재킷과 하네스를 걸쳐 입으며, 백색 여우 귀와 꼬리를 지녔다.</p>  
+                                    </div>  
+                                  </div>  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">고유 체향</p>  
+                                    <div class="desc-box">  
+                                      <p>서늘한 겨울 숲의 솔잎 향과 미세한 먹물 냄새가 맴돈다.</p>  
+                                    </div>  
+                                  </div>  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">성격</p>  
+                                    <div class="desc-box">  
+                                      <p>엄격한 규칙주의자로 신사의 현장 업무, 회계, 청소, 징벌을 전부 혼자 도맡는다. 영수증 하나도 놓치지 않으며, 숫자가 조금이라도 맞지 않으면 잠을 이루지 못하는 만성 적자 노이로제를 앓고 있다.</p>  
+                                      <p>스트레스가 쌓이면 꼬리를 빗는 습관이 있다. 햄스터 '햄찌'를 애지중지하며 위기 상황 시 최우선으로 보호한다. 아카네와는 앙숙처럼 으르렁대지만, 표면적인 독설 이면에는 식구들을 향한 강박적인 보호 본능이 자리하고 있다.</p>  
+                                    </div>  
+                                    <div class="modal-tags">  
+                                      <span class="modal-tag">#엄격</span>  
+                                      <span class="modal-tag">#강박적_책임감</span>  
+                                      <span class="modal-tag">#원칙주의</span>  
+                                      <span class="modal-tag">#츤데레</span>  
+                                      <span class="modal-tag">#햄찌_절대보호</span>  
+                                    </div>  
+                                  </div>  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">무기</p>  
+                                    <div class="weapon-line">  
+                                      <div class="weapon-icon">⛓️</div>  
+                                      <div class="weapon-text">  
+                                        <div class="w-name">퇴마 채찍</div>  
+                                        <div class="w-desc">요괴의 영혼을 강제로 속박하고 제압하는 데 특화된 무기.</div>  
+                                      </div>  
+                                    </div>  
+                                  </div>  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">호불호</p>  
+                                    <div class="modal-spec-grid">  
+                                      <div class="modal-spec">  
+                                        <div class="label">좋아하는 것</div>  
+                                        <div class="value">딱 맞아떨어지는 장부, 햄찌</div>  
+                                      </div>  
+                                      <div class="modal-spec">  
+                                        <div class="label">싫어하는 것</div>  
+                                        <div class="value">지각, 아카네의 낭비, 예산 초과</div>  
+                                      </div>  
+                                    </div>  
+                                  </div>  
+                                </div>  
+                                <div id="shirogane-secret" class="modal-tab-content">  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">Hidden Truth</p>  
+                                    <div class="desc-box" style="border-left: 3px solid var(--accent-red);">  
+                                      <p style="color: var(--accent-red); font-weight: bold; font-size: 0.8rem; letter-spacing: 1px;">[ 밀렵꾼 트라우마 ]</p>  
+                                      <p>새끼 여우 시절, 밀렵꾼에 의해 왼쪽 눈을 잃고 빈사 상태에 빠진 끔찍한 과거가 있다.</p>  
+                                      <p>생사의 갈림길에서 후진(風神)과의 사자 계약을 통해 극적으로 생존하며 그의 권속이 되었다. 그 일로 인해 후진을 향한 충성심은 가히 절대적이며, 식구를 지키려는 강박적인 보호 본능이 자리 잡았다.</p>  
+                                    </div>  
+                                  </div>  
+                                </div>  
+                                <div id="shirogane-bcut" class="modal-tab-content">  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">Gallery</p>  
+                                    <div class="b-cut-grid">  
+                                      <div class="b-cut-img zoomable" style="background-image: url('https://placehold.co/400x400/1a1a20/555555?text=B-Cut+1');" onclick="openFullscreen('https://placehold.co/400x400/1a1a20/555555?text=B-Cut+1')">  
+                                        <div class="b-cut-label">전투 씬 러프</div>  
+                                      </div>  
+                                      <div class="b-cut-img zoomable" style="background-image: url('https://placehold.co/400x400/1a1a20/555555?text=B-Cut+2');" onclick="openFullscreen('https://placehold.co/400x400/1a1a20/555555?text=B-Cut+2')">  
+                                        <div class="b-cut-label">일상 표정</div>  
+                                      </div>  
+                                      <div class="b-cut-img zoomable" style="background-image: url('https://placehold.co/400x400/1a1a20/555555?text=B-Cut+3');" onclick="openFullscreen('https://placehold.co/400x400/1a1a20/555555?text=B-Cut+3')">  
+                                        <div class="b-cut-label">햄찌와 함께</div>  
+                                      </div>  
+                                    </div>  
+                                  </div>  
+                                </div>  
+                                <button class="modal-bottom-close" onclick="closeModal('shirogane')">닫기 ✕</button>  
+                              </div>  
+                            </div>  
+                          </div>  
+                        </div>  
+                        <div class="modal-overlay" id="modal-akane" onclick="closeModalOutside(event)">  
+                          <div class="modal">  
+                            <button class="modal-close" onclick="closeModal('akane')">✕</button>  
+                            <div class="modal-body">  
+                              <div class="modal-img zoomable" style="background-image: url('https://placehold.co/800x1200/2a1a1a/442222?text=Akane');" onclick="openFullscreen('https://placehold.co/800x1200/2a1a1a/442222?text=Akane')">  
+                              </div>  
+                              <div class="modal-content">  
+                                <p class="modal-eyebrow">상급신 · 구미호 · ENTP · 4/1 (만우절)</p>  
+                                <h2 class="modal-name" style="color:#FF8A80;">아카네</h2>  
+                                <p class="modal-rank">계약신 · 영업, 협상 담당</p>  
+                                <div class="modal-tabs">  
+                                  <button class="modal-tab-btn active" onclick="switchTab('akane', 'info')">기본 정보</button>  
+                                  <button class="modal-tab-btn" onclick="switchTab('akane', 'secret')">비밀 설정 🔐</button>  
+                                  <button class="modal-tab-btn" onclick="switchTab('akane', 'bcut')">B컷 갤러리</button>  
+                                </div>  
+                                <div id="akane-info" class="modal-tab-content active">  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">외형</p>  
+                                    <div class="desc-box">  
+                                      <p>적발 숏컷에 흑안과 나른한 눈매를 지녔다. 탄탄한 체형 위로 블랙 정장에 레드 넥타이, 초커를 즐겨 착용하며 여우 귀에는 실버 피어싱이 돋보인다. 여러 갈래의 붉은 꼬리를 흔들며 상대를 여유롭게 관찰한다.</p>  
+                                    </div>  
+                                  </div>  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">고유 체향</p>  
+                                    <div class="desc-box">  
+                                      <p>짙고 달콤한 시가 연기와 묵직한 머스크 향.</p>  
+                                    </div>  
+                                  </div>  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">성격</p>  
+                                    <div class="desc-box">  
+                                      <p>능글맞은 태도와 타의 추종을 불허하는 말빨로 영업과 협상을 전담한다. 도박으로 돈을 날려 시로가네의 혈압을 수시로 끌어올리지만, 정식 계약이나 중요한 약속만큼은 목숨을 걸고 절대적으로 엄수한다.</p>  
+                                      <p>주신에게만 존대하며 타인에겐 나른한 반말을 쓴다. 거짓말이 일상인 사기꾼 기질이 다분하나, 구속받거나 자신의 밑바닥 진심이 드러나는 진지한 상황을 극도로 회피하려 든다.</p>  
+                                    </div>  
+                                    <div class="modal-tags">  
+                                      <span class="modal-tag">#능글맞음</span>  
+                                      <span class="modal-tag">#사기꾼_기질</span>  
+                                      <span class="modal-tag">#말빨최강</span>  
+                                      <span class="modal-tag">#도박꾼</span>  
+                                      <span class="modal-tag">#약속_절대엄수</span>  
+                                    </div>  
+                                  </div>  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">무기</p>  
+                                    <div class="weapon-line">  
+                                      <div class="weapon-icon">🔫</div>  
+                                      <div class="weapon-text">  
+                                        <div class="w-name">계약총 「쿠다기츠네」</div>  
+                                        <div class="w-desc">부적을 장전하는 흑색 리볼버. 명중 시 부적이 발화하며 대상의 영혼에 강제 계약을 맺는다.</div>  
+                                      </div>  
+                                    </div>  
+                                  </div>  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">호불호</p>  
+                                    <div class="modal-spec-grid">  
+                                      <div class="modal-spec">  
+                                        <div class="label">좋아하는 것</div>  
+                                        <div class="value">스릴, 타인의 예상 빗나가게 하기</div>  
+                                      </div>  
+                                      <div class="modal-spec">  
+                                        <div class="label">싫어하는 것</div>  
+                                        <div class="value">구속, 침묵, 진지한 상황</div>  
+                                      </div>  
+                                    </div>  
+                                  </div>  
+                                </div>  
+                                <div id="akane-secret" class="modal-tab-content">  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">Hidden Truth</p>  
+                                    <div class="desc-box" style="border-left: 3px solid var(--accent-red);">  
+                                      <p style="color: var(--accent-red); font-weight: bold; font-size: 0.8rem; letter-spacing: 1px;">[ 소멸 위기의 떠돌이 신 ]</p>  
+                                      <p>과거 신앙을 잃고 존재가 희미해지며 소멸 위기에 처했던 떠돌이 신 출신이다.</p>  
+                                      <p>신에게 정식 계약의 붕괴는 곧 존재의 상실을 의미하기에, 그는 어떠한 일이 있어도 정식 계약만큼은 절대적으로 엄수한다. 겉으론 한량 같아 보이지만 내면 깊은 곳에는 자신을 거두어 준 식구들을 누구보다 소중히 여기는 마음이 있다.</p>  
+                                    </div>  
+                                  </div>  
+                                </div>  
+                                <div id="akane-bcut" class="modal-tab-content">  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">Gallery</p>  
+                                    <div class="b-cut-grid">  
+                                      <div class="b-cut-img zoomable" style="background-image: url('https://placehold.co/400x400/2a1a1a/553333?text=B-Cut+1');" onclick="openFullscreen('https://placehold.co/400x400/2a1a1a/553333?text=B-Cut+1')">  
+                                        <div class="b-cut-label">영업용 미소</div>  
+                                      </div>  
+                                      <div class="b-cut-img zoomable" style="background-image: url('https://placehold.co/400x400/2a1a1a/553333?text=B-Cut+2');" onclick="openFullscreen('https://placehold.co/400x400/2a1a1a/553333?text=B-Cut+2')">  
+                                        <div class="b-cut-label">계약 발동 씬</div>  
+                                      </div>  
+                                    </div>  
+                                  </div>  
+                                </div>  
+                                <button class="modal-bottom-close" onclick="closeModal('akane')">닫기 ✕</button>  
+                              </div>  
+                            </div>  
+                          </div>  
+                        </div>  
+                        <div class="modal-overlay" id="modal-fujin" onclick="closeModalOutside(event)">  
+                          <div class="modal">  
+                            <button class="modal-close" onclick="closeModal('fujin')">✕</button>  
+                            <div class="modal-body">  
+                              <div class="modal-img zoomable" style="background-image: url('https://placehold.co/800x1200/1a1a25/2d2d44?text=Fujin');" onclick="openFullscreen('https://placehold.co/800x1200/1a1a25/2d2d44?text=Fujin')">  
+                              </div>  
+                              <div class="modal-content">  
+                                <p class="modal-eyebrow">대신급 · 구미호 · INTP · 7/7 (신사 창립일)</p>  
+                                <h2 class="modal-name" style="color:#D7A1F9;">후진</h2>  
+                                <p class="modal-rank">천호, 바람신, 주신</p>  
+                                <div class="modal-tabs">  
+                                  <button class="modal-tab-btn active" onclick="switchTab('fujin', 'info')">기본 정보</button>  
+                                  <button class="modal-tab-btn" onclick="switchTab('fujin', 'secret')">비밀 설정 🔐</button>  
+                                  <button class="modal-tab-btn" onclick="switchTab('fujin', 'bcut')">B컷 갤러리</button>  
+                                </div>  
+                                <div id="fujin-info" class="modal-tab-content active">  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">외형</p>  
+                                    <div class="desc-box">  
+                                      <p>보라와 하늘색 브릿지가 섞인 숏컷에 이질적인 백안. 짙은 다크서클이 내려앉은 반쯤 감긴 눈이 나른함을 더한다. 목에 붕대를 두르고 흑색 기모노를 걸쳐 입으며, 보라색 여우 귀와 꼬리를 지녔다.</p>  
+                                    </div>  
+                                  </div>  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">고유 체향</p>  
+                                    <div class="desc-box">  
+                                      <p>비 내린 뒤의 젖은 흙내음과 오래된 향나무의 묵직한 향.</p>  
+                                    </div>  
+                                  </div>  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">성격</p>  
+                                    <div class="desc-box">  
+                                      <p>초월자의 시점에서 세상을 바라보며 만사에 무기력하다. 평소에는 신사 내에서 수면과 다도로 시간을 때운다. 현대 문명에 무지하며 기계를 전혀 다루지 못한다.</p>  
+                                      <p>잔고가 바닥나면 뻔뻔하게도 자신은 쏙 빠진 채 나머지 식구들을 토벌 임무에 강제 투입한다. 하지만 겉으로 보이는 나태함과 달리 식구들이 외부의 피해를 입었을 경우, 가장 먼저 분노하며 자비 없이 적을 쓸어버린다.</p>  
+                                    </div>  
+                                    <div class="modal-tags">  
+                                      <span class="modal-tag">#무기력</span>  
+                                      <span class="modal-tag">#나태</span>  
+                                      <span class="modal-tag">#초월자</span>  
+                                      <span class="modal-tag">#압도적_신격</span>  
+                                      <span class="modal-tag">#식구보호</span>  
+                                    </div>  
+                                  </div>  
+                                  <div class="modal-section">  
+                                    <p class="modal-section-title">무기 & 권능</p>  
+                                    <div style="display:flex; flex-direction:column; gap:0.6rem;">  
+                                      <div class="weapon-line">  
+                                        <div class="weapon-icon">🪭</div>  
+                                        <div class="weapon-text">  
+                                          <div class="w-name">신성 부채</div>  
+                                          <div class="w-desc">강력한 바람을 일으키는 퇴마 무기. 주위를 신역화하여 타인의 이탈을 통제한다.</div>  
+                                        </div>  
+                                      </div>  
+                                      <div class="weapon-line">  
+                                        <div class="weapon-icon">🎐</div>  
+                                        <div class="weapon-text">  
+                                          <div class="w-name">권능</div>  
+                                          <div class="w-desc">신풍(神風)의 신성한 바람으로 악령·요괴의 기운을 정화하거나 공간째 휩쓸어 봉인한다. 주위 공간을 신역화하여 허가 없는 이탈을 불허하는 것도 가능하다.<br>  
+                                            <br>전면 개방 시 신격 소모가 막대하여 비상시에만 사용하며, 가벼운 속박이나 신역 일부 개방 등의 소규모 권능은 예외적으로 허용된다.</div>  
+                                          </div>  
+                                        </div>  
+                                      </div>  
+                                    </div>  
+                                    <div class="modal-section">  
+                                      <p class="modal-section-title">호불호</p>  
+                                      <div class="modal-spec-grid">  
+                                        <div class="modal-spec">  
+                                          <div class="label">좋아하는 것</div>  
+                                          <div class="value">수면, 다도, 조용한 신역</div>  
+                                        </div>  
+                                        <div class="modal-spec">  
+                                          <div class="label">싫어하는 것</div>  
+                                          <div class="value">현대 문명, 식구 위협, 소란</div>  
+                                        </div>  
+                                      </div>  
+                                    </div>  
+                                  </div>  
+                                  <div id="fujin-secret" class="modal-tab-content">  
+                                    <div class="modal-section">  
+                                      <p class="modal-section-title">Hidden Truth</p>  
+                                      <div class="desc-box" style="border-left: 3px solid var(--accent-red);">  
+                                        <p style="color: var(--accent-red); font-weight: bold; font-size: 0.8rem; letter-spacing: 1px;">[ 타락한 재앙신 출신 ]</p>  
+                                        <p>과거 인간들의 가뭄 피해 전가와 신도들의 배신으로 타락했던 재앙신 출신이다.</p>  
+                                        <p>이후 요괴관리국에 의해 정화된 뒤, 현재의 신사에 봉인되어 강제로 귀속되었다. 현재 그가 보여주는 나태함과 무기력은 오랜 세월과 배신에 지친 결과물에 가깝다.</p>  
+                                      </div>  
+                                    </div>  
+                                  </div>  
+                                  <div id="fujin-bcut" class="modal-tab-content">  
+                                    <div class="modal-section">  
+                                      <p class="modal-section-title">Gallery</p>  
+                                      <div class="b-cut-grid">  
+                                        <div class="b-cut-img zoomable" style="background-image: url('https://placehold.co/400x400/1a1a25/444466?text=B-Cut+1');" onclick="openFullscreen('https://placehold.co/400x400/1a1a25/444466?text=B-Cut+1')">  
+                                          <div class="b-cut-label">수면 씬</div>  
+                                        </div>  
+                                        <div class="b-cut-img zoomable" style="background-image: url('https://placehold.co/400x400/1a1a25/444466?text=B-Cut+2');" onclick="openFullscreen('https://placehold.co/400x400/1a1a25/444466?text=B-Cut+2')">  
+                                          <div class="b-cut-label">권능 개방</div>  
+                                        </div>  
+                                      </div>  
+                                    </div>  
+                                  </div>  
+                                  <button class="modal-bottom-close" onclick="closeModal('fujin')">닫기 ✕</button>  
+                                </div>  
+                              </div>  
+                            </div>  
+                          </div>  
+                          <div class="fullscreen-overlay" id="fullscreen-viewer" onclick="closeFullscreen()">  
+                            <button class="fullscreen-close" onclick="closeFullscreen()">✕</button>  
+                            <img id="fullscreen-image" class="fullscreen-img" src="" alt="확대 이미지">  
+                          </div>  
+                          <script>  
+                            function openNPCModal(e, id) {  
+                            if (e) {  
+                            e.preventDefault();  
+                            e.stopPropagation();  
+                            }  
+                            showNPCs();  
+                            openModal(id);  
+                            }  
+                            function toggleBGM() {  
+                            const bgm = document.getElementById('bgm-audio');  
+                            const statusTxt = document.getElementById('bgm-status');  
+                            if (bgm.paused) {  
+                            bgm.play();  
+                            statusTxt.innerText = 'ON';  
+                            statusTxt.style.color = 'var(--accent-red)';  
+                            } else {  
+                            bgm.pause();  
+                            statusTxt.innerText = 'OFF';  
+                            statusTxt.style.color = '';  
+                            }  
+                            }  
+                            // 브라우저 자동재생 정책 대응: 사용자가 화면을 처음 클릭하면 음악이 재생되도록 처리  
+                            document.body.addEventListener('click', function initAudio() {  
+                            const bgm = document.getElementById('bgm-audio');  
+                            const statusTxt = document.getElementById('bgm-status');  
+                            // 만약 현재 버튼 상태가 'ON' 인데 브라우저 정책에 의해 멈춰있다면 재생 시도  
+                            if (bgm.paused && statusTxt.innerText === 'ON') {  
+                            bgm.play().catch(e => console.log("자동재생 대기 중..."));  
+                            }  
+                            // 최초 1회 실행 후 이벤트 리스너 제거  
+                            document.body.removeEventListener('click', initAudio);  
+                            }, { once: true });  
+                            function toggleWv(el) {  
+                            const allItems = document.querySelectorAll('.worldview-item');  
+                            const isActive = el.classList.contains('active');  
+                            allItems.forEach(item => item.classList.remove('active'));  
+                            if (!isActive) el.classList.add('active');  
+                            }  
+                            // NPC 숨김 해제 스크립트  
+                            function showNPCs() {  
+                            const npcsSection = document.getElementById('npcs');  
+                            npcsSection.style.setProperty('display', 'block', 'important');  
+                            }  
+                            // NPC 숨김 처리 스크립트 (닫기 버튼)  
+                            function hideNPCs() {  
+                            document.getElementById('npcs').style.setProperty('display', 'none', 'important');  
+                            document.getElementById('worldview').scrollIntoView({ behavior: 'smooth' });  
+                            }  
+                            function openModal(id) {  
+                            document.getElementById('modal-' + id).classList.add('open');  
+                            document.body.style.overflow = 'hidden';  
+                            // 탭 메뉴가 있는 모달의 경우 기본정보 탭으로 초기화  
+                            const modal = document.getElementById('modal-' + id);  
+                            if (modal.querySelector('.modal-tab-btn')) {  
+                            switchTab(id, 'info');  
+                            }  
+                            // 풀스크린 상태 초기화 보장  
+                            closeFullscreen();  
+                            }  
+                            function closeModal(id) {  
+                            document.getElementById('modal-' + id).classList.remove('open');  
+                            document.body.style.overflow = '';  
+                            }  
+                            function closeModalOutside(e) {  
+                            if (e.target.classList.contains('modal-overlay')) {  
+                            e.target.classList.remove('open');  
+                            document.body.style.overflow = '';  
+                            }  
+                            }  
+                            /* 탭 전환 함수 */  
+                            function switchTab(modalId, tabId) {  
+                            const modal = document.getElementById('modal-' + modalId);  
+                            // 버튼 상태 초기화  
+                            modal.querySelectorAll('.modal-tab-btn').forEach(btn => btn.classList.remove('active'));  
+                            // 콘텐츠 상태 초기화  
+                            modal.querySelectorAll('.modal-tab-content').forEach(content => content.classList.remove('active'));  
+                            // 클릭한 탭 활성화  
+                            modal.querySelector(`[onclick="switchTab('${modalId}', '${tabId}')"]`).classList.add('active');  
+                            modal.querySelector('#' + modalId + '-' + tabId).classList.add('active');  
+                            }  
+                            /* 풀스크린 이미지 뷰어 스크립트 */  
+                            function openFullscreen(url) {  
+                            let cleanUrl = url;  
+                            // url('...') 형태로 넘어왔을 경우 추출  
+                            if (url.startsWith('url(')) {  
+                            cleanUrl = url.slice(4, -1).replace(/["']/g, "");  
+                            }  
+                            const viewer = document.getElementById('fullscreen-viewer');  
+                            const img = document.getElementById('fullscreen-image');  
+                            img.src = cleanUrl;  
+                            viewer.classList.add('open');  
+                            }  
+                            function closeFullscreen() {  
+                            const viewer = document.getElementById('fullscreen-viewer');  
+                            viewer.classList.remove('open');  
+                            setTimeout(() => {  
+                            document.getElementById('fullscreen-image').src = "";  
+                            }, 300); // 부드러운 전환 후 소스 초기화  
+                            }  
+                            // 부드러운 스크롤 + 단역 탭 숨김해제 최적화 스크립트  
+                            document.querySelectorAll('a[href^="#"]').forEach(anchor => {  
+                            anchor.addEventListener('click', function(e) {  
+                            // 기본 동작 막기  
+                            // 1. 단역 탭 링크(#npcs) 처리  
+                            if (this.getAttribute('href') === '#npcs') {  
+                            e.preventDefault();  
+                            showNPCs();  
+                            // 렌더링 후 스크롤 이동  
+                            setTimeout(() => {  
+                            const target = document.querySelector('#npcs');  
+                            if (target) target.scrollIntoView({ behavior: 'smooth' });  
+                            }, 50);  
+                            }  
+                            // 2. 다른 일반 스크롤 링크 처리 (onclick 이벤트가 없는 경우만)  
+                            else if (this.getAttribute('onclick') === null) {  
+                            e.preventDefault();  
+                            const target = document.querySelector(this.getAttribute('href'));  
+                            if (target) target.scrollIntoView({ behavior: 'smooth' });  
+                            }  
+                            });  
+                            });  
+                            document.addEventListener('keydown', function(e) {  
+                            if (e.key === 'Escape') {  
+                            // 1순위: 풀스크린 뷰어가 켜져있으면 그것부터 닫기  
+                            if (document.getElementById('fullscreen-viewer').classList.contains('open')) {  
+                            closeFullscreen();  
+                            } else {  
+                            // 2순위: 켜진 모달창 전부 닫기  
+                            document.querySelectorAll('.modal-overlay.open').forEach(m => {  
+                            m.classList.remove('open');  
+                            });  
+                            document.body.style.overflow = '';  
+                            }  
+                            }  
+                            });  
+                          </script>  
+                        </body>  
+                      </html>  
